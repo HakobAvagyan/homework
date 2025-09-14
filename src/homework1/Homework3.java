@@ -19,14 +19,13 @@ public class Homework3 {
             if (numbers[i] < min) {
                 min = numbers[i];
             }
-        }
-        System.out.print("5) " + min);
-        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > max) {
                 max = numbers[i];
             }
         }
+        System.out.print("5) " + min);
         System.out.println(" առավելագույնի դեպքում " + max);
+
         System.out.print("6) ");
         int middle = 0;
         if (numbers.length > 2) {
