@@ -19,11 +19,10 @@ public class DynamicArray {
         array = longArray;
     }
     public int getByIndex(int index){
-        for (int i = 0; i < size; i++) {
-            if(index == array[i]){
-                return array[i];
+
+            if(index == array[index]){
+                return array[index];
             }
-        }
         return -1;
     }
     public void print(){
