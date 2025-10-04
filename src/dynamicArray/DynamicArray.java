@@ -3,6 +3,7 @@ package dynamicArray;
 public class DynamicArray {
     private int[] array = new int[10];
     private int size = 0;
+
     public void add(int value){
         if(size == array.length-1){
             extend();
@@ -18,17 +19,18 @@ public class DynamicArray {
         }
         array = longArray;
     }
+
     public int getByIndex(int index){
-        for (int i = 0; i < size; i++) {
-            if(index == array[i]){
-                return array[i];
+            if (index >= 0 && index < size) {
+                return array[index];
             }
+            return -1;
         }
-        return -1;
-    }
+
     public void print(){
         for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + "");
+            System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 }
