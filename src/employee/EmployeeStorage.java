@@ -30,13 +30,13 @@ public class EmployeeStorage {
     }
 
 
-    public Employee searchID(String id) throws EmployeeIdNotFoundException {
+    public Employee searchID(String id) throws EmployeeNotFoundException {
         for (int i = 0; i < size; i++) {
             if (id.contains(employees[i].getEmployeeID())){
                 return employees[i];
             }
         }
-        throw new EmployeeIdNotFoundException("EMPLOYEE BY THAT "+ id +" NOT FOUND PLEASE TRY AGAIN");
+        throw new EmployeeNotFoundException("EMPLOYEE BY THAT "+ id +" NOT FOUND PLEASE TRY AGAIN");
     }
 
     public void searchCompane(String  compane) {
@@ -47,7 +47,7 @@ public class EmployeeStorage {
         }
     }
 
-    public void searchLevel(PositionLevel positionLevel) {
+    public void searchByLevel(PositionLevel positionLevel) {
         for (int i = 0; i < size; i++) {
             if(positionLevel == employees[i].getLevel()){
                 System.out.println(employees[i]);

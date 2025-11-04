@@ -2,7 +2,7 @@ package employee;
 
 import java.util.Scanner;
 
-public class EmployeeDemo implements Coomandes {
+public class EmployeeDemo implements Commands {
 
     private static Scanner scanner = new Scanner(System.in);
     private static EmployeeStorage employeeStorage = new EmployeeStorage();
@@ -11,7 +11,7 @@ public class EmployeeDemo implements Coomandes {
 
         boolean isRun = true;
         while (isRun){
-            Coomandes.printCoomande();
+            Commands.printCoomande();
             String coomand = scanner.nextLine();
             switch (coomand){
                 case EXIT :
@@ -28,7 +28,7 @@ public class EmployeeDemo implements Coomandes {
                     String id = scanner.nextLine();
                     try {
                         System.out.println(employeeStorage.searchID(id));
-                    } catch (EmployeeIdNotFoundException e) {
+                    } catch (EmployeeNotFoundException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -42,7 +42,7 @@ public class EmployeeDemo implements Coomandes {
                     printLevels();
                     String level = scanner.nextLine();
                     PositionLevel positionLevel = PositionLevel.valueOf(level);
-                    employeeStorage.searchLevel(positionLevel);
+                    employeeStorage.searchByLevel(positionLevel);
                     break;
                 default:
                     System.err.println("Wrong coomand! Try again");
